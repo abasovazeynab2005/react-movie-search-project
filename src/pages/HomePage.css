@@ -1,0 +1,18 @@
+.content {
+  display: flex;
+  gap: 30px;
+}
+
+.movies-section {
+  flex: 2;
+}
+
+.selected-section {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+}

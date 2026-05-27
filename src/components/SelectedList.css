@@ -1,0 +1,96 @@
+.selected-card {
+  background: white;
+  border: 2px solid #ff4500;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.save-message {
+  background-color: #28a745;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.added-movies-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.empty-favorite {
+  text-align: center;
+  color: #999;
+  padding: 20px;
+  font-size: 14px;
+}
+
+.added-movie-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.remove-x-btn {
+  background: #ff0000;
+  color: white;
+  border: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.remove-x-btn:hover {
+  background: #cc0000;
+}
+
+.folder-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Серая кнопка по умолчанию */
+.btn-add-list {
+  background-color: #808080;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Зелёная кнопка когда есть название и фильмы */
+.btn-add-list.active {
+  background-color: #28a745;
+}
+
+.btn-add-list.active:hover {
+  background-color: #218838;
+}
+
+.btn-look-list {
+  background-color: #800080;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-look-list:hover {
+  background-color: #6a006a;
+}

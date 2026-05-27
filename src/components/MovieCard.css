@@ -1,0 +1,56 @@
+.movie-card {
+  background: white;
+  border: 2px solid #ff4500;
+  border-radius: 12px;
+  display: flex;
+  padding: 15px;
+  gap: 20px;
+}
+
+.movie-poster {
+  width: 180px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.movie-title {
+  font-size: 24px;
+  color: #000;
+}
+
+.movie-year {
+  font-size: 16px;
+  color: #333;
+}
+
+.fav-button {
+  background-color: #808080;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+/* Зелёная кнопка когда фильм добавлен */
+.fav-button.added {
+  background-color: #28a745;
+}
+
+.fav-button.added:hover {
+  background-color: #218838;
+}
+
+.fav-button:hover {
+  opacity: 0.9;
+}

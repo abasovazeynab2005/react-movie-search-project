@@ -1,69 +1,197 @@
 .my-lists-page {
-  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
   padding: 20px;
 }
 
-.my-lists-page h2 {
-  color: #333;
-  margin-bottom: 20px;
+.lists-header {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.folders-container {
-  max-width: 500px;
-  margin: 20px auto;
+.lists-header h2 {
+  color: #ff4500;
+  font-size: 28px;
+  margin-bottom: 0;
+}
+
+.empty-lists {
+  text-align: center;
+  padding: 50px;
+  background: white;
+  border-radius: 12px;
+}
+
+.empty-lists p {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.all-lists-container {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 30px;
 }
 
-.folder-item {
+.list-card-full {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ff4500;
+}
+
+.list-card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: white;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ffcc00;
 }
 
-.folder-link {
-  cursor: pointer;
-  text-decoration: none;
+.list-card-title {
   color: #333;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 20px;
+  margin: 0;
 }
 
-.folder-link:hover {
-  color: #800080;
-}
-
-.del-folder-btn {
-  background: red;
+.delete-list-btn {
+  background-color: #dc3545;
   color: white;
   border: none;
-  border-radius: 4px;
-  padding: 5px 10px;
+  padding: 6px 12px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
 }
 
-.no-folders {
-  color: #666;
-  margin: 20px;
+.delete-list-btn:hover {
+  background-color: #c82333;
 }
 
-.movies-back-btn {
+.folder-movies-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.folder-movie-item {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.folder-movie-item:hover {
+  background-color: #f0f0f0;
+}
+
+.folder-movie-poster {
+  width: 50px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.folder-movie-info {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.folder-movie-title {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.folder-movie-year {
+  color: #666;
+  font-size: 14px;
+}
+
+/* IMDb link goes to the right end */
+.small-imdb-link {
+  background-color: #f5c518;
+  color: black;
+  text-decoration: none;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: auto;
+}
+
+.small-imdb-link:hover {
+  background-color: #e6b800;
+}
+
+.no-movies-in-folder {
+  color: #999;
+  text-align: center;
+  padding: 20px;
+}
+
+.loading-message {
+  text-align: center;
+  padding: 50px;
+  font-size: 18px;
+  color: #666;
+}
+
+/* BOTTOM BUTTON SECTION */
+.bottom-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  padding-top: 20px;
+}
+
+.movies-bottom-btn {
   background-color: #800080;
   color: white;
   border: none;
-  padding: 10px 30px;
-  border-radius: 6px;
+  padding: 12px 30px;
+  border-radius: 8px;
   font-size: 18px;
+  font-weight: bold;
   cursor: pointer;
-  margin-top: 20px;
 }
 
-.movies-back-btn:hover {
+.movies-bottom-btn:hover {
   background-color: #6a006a;
+}
+
+@media (max-width: 768px) {
+  .folder-movie-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .folder-movie-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .small-imdb-link {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+
+  .list-card-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .bottom-buttons {
+    margin-top: 30px;
+  }
 }

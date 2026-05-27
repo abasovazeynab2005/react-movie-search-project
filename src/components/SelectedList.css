@@ -72,7 +72,6 @@
   cursor: pointer;
 }
 
-/* Зелёная кнопка когда есть название и фильмы */
 .btn-add-list.active {
   background-color: #28a745;
 }

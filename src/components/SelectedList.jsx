@@ -7,20 +7,22 @@ const SelectedList = ({ selectedMovies, onRemove, onSaveList }) => {
   const [saveMessage, setSaveMessage] = useState("");
   const navigate = useNavigate();
 
-  // Проверяем, можно ли сохранить (есть название и есть фильмы)
-  const canSave = listName.trim() !== "" && selectedMovies.length > 0;
+  const canSave = listName.trim() && selectedMovies.length;
+
+  const showMessage = (text) => {
+    setSaveMessage(text);
+    setTimeout(() => setSaveMessage(""), 2000);
+  };
 
   const handleSave = () => {
-    if (!canSave) {
-      setSaveMessage("imput is empty!Please enter the name");
-      setTimeout(() => setSaveMessage(""), 2000);
-      return;
-    }
+    if (!canSave)
+      return showMessage(
+        " Please enter the name or select the favorite film! "
+      );
 
     onSaveList(listName).then(() => {
       setListName("");
-      setSaveMessage("list saved!");
-      setTimeout(() => setSaveMessage(""), 2000);
+      showMessage("List saved!");
     });
   };
 
@@ -29,30 +31,26 @@ const SelectedList = ({ selectedMovies, onRemove, onSaveList }) => {
       {saveMessage && <div className="save-message">{saveMessage}</div>}
 
       <div className="added-movies-list">
-        {selectedMovies.map((movie) => (
-          <div key={movie.imdbID} className="added-movie-item">
-            <span>{movie.Title}</span>
-            <button
-              className="remove-x-btn"
-              onClick={() => onRemove(movie.imdbID)}
-            >
-              ✕
-            </button>
-          </div>
-        ))}
-        {selectedMovies.length === 0 && <div className="empty-favorite"> </div>}
+        {selectedMovies.length ? (
+          selectedMovies.map(({ imdbID, Title }) => (
+            <div key={imdbID} className="added-movie-item">
+              <span>{Title}</span>
+              <button onClick={() => onRemove(imdbID)}>✕</button>
+            </div>
+          ))
+        ) : (
+          <div className="empty-favorite" />
+        )}
       </div>
 
       <input
-        type="text"
         className="folder-input"
-        placeholder="Название папки..."
         value={listName}
         onChange={(e) => setListName(e.target.value)}
       />
 
       <button
-        className={canSave ? "btn-add-list active" : "btn-add-list"}
+        className={`btn-add-list ${canSave ? "active" : ""}`}
         onClick={handleSave}
       >
         Add To Favorite List

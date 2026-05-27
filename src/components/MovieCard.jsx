@@ -1,22 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "./MovieCard.css";
 
-const MovieCard = ({ movie, onToggle, isAdded }) => {
+const MovieCard = ({ movie, onClick, isAdded }) => {
+  const [imgError, setImgError] = useState(false);
+
   const posterUrl =
-    movie.Poster !== "N/A"
-      ? movie.Poster
-      : "https://via.placeholder.com/180x240?text=No+Poster";
+    imgError || movie.Poster === "N/A"
+      ? "https://via.placeholder.com/180x240?text=No+Poster"
+      : movie.Poster;
 
   return (
     <div className="movie-card">
-      <img src={posterUrl} alt={movie.Title} className="movie-poster" />
+      <img
+        src={posterUrl}
+        alt={movie.Title}
+        className="movie-poster"
+        onError={() => setImgError(true)}
+      />
       <div className="movie-info">
         <h2 className="movie-title">{movie.Title}</h2>
         <p className="movie-year">Year: {movie.Year}</p>
 
         <button
           className={isAdded ? "fav-button added" : "fav-button"}
-          onClick={() => onToggle(movie)}
+          onClick={() => onClick(movie)}
         >
           ♥ Favorite
         </button>

@@ -5,25 +5,25 @@ const OMDB_BASE_URL = "https://www.omdbapi.com/";
 const getDefaultMovies = () => {
   return [
     {
-      imdbID: "tt0111161",
-      Title: "The Shawshank Redemption",
-      Year: "1994",
+      imdbID: "tt0120338", 
+      Title: "Titanic",
+      Year: "1997", 
       Poster:
-        "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2RlYy00NmEyLTk4ZjgtYjE5NzM3MzVmY2M4XkEyXkFqcGc@._V1_SX300.jpg",
+        "https://m.media-amazon.com/images/M/MV5BMDdmZGU3NDQtY2E5My00ZTliLWIzOTUtMTY4ZGI1YjdiNjk3XkEyXkFqcGc@._V1_SX300.jpg",
     },
-    {
-      imdbID: "tt0068646",
-      Title: "The Godfather",
-      Year: "1972",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGc@._V1_SX300.jpg",
-    },
-    {
+      {
       imdbID: "tt0468569",
       Title: "The Dark Knight",
       Year: "2008",
       Poster:
         "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
+    },
+    {
+      imdbID: "tt0499549",
+      Title: "Avatar",
+      Year: "2009",
+      Poster:
+        "https://m.media-amazon.com/images/M/MV5BZDA0OGQxNTItMDZkMC00N2UyLTg3MzMtYTJmNjg3ZjE0MzQ5XkEyXkFqcGc@._V1_SX300.jpg",
     },
     {
       imdbID: "tt1375666",
@@ -33,46 +33,32 @@ const getDefaultMovies = () => {
         "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
     },
     {
-      imdbID: "tt0133093",
-      Title: "The Matrix",
-      Year: "1999",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGc@._V1_SX300.jpg",
-    },
-    {
-      imdbID: "tt0120737",
-      Title: "The Lord of the Rings: The Fellowship of the Ring",
+      imdbID: "tt0241527",
+      Title: "Harry Potter and the Sorcerer's Stone",
       Year: "2001",
       Poster:
-        "https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGc@._V1_SX300.jpg",
+        "https://m.media-amazon.com/images/M/MV5BNjQ3NWNlNmQtMTE5ZS00MDdmLTlkZjUtZTBlM2UxMGFiMTU3XkEyXkFqcGc@._V1_SX300.jpg",
     },
     {
-      imdbID: "tt0167260",
-      Title: "The Lord of the Rings: The Return of the King",
-      Year: "2003",
+      imdbID: "tt2488496",
+      Title: "Frozen",
+      Year: "2013",
       Poster:
-        "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGc@._V1_SX300.jpg",
+        "https://m.media-amazon.com/images/M/MV5BMTQ1MjQwMTE5OF5BMl5BanBnXkFtZTgwNjk3MTcyMDE@._V1_SX300.jpg",
     },
     {
-      imdbID: "tt0110912",
-      Title: "Pulp Fiction",
-      Year: "1994",
+      imdbID: "tt4633694",
+      Title: "Spider-Man: Into the Spider-Verse",
+      Year: "2018",
       Poster:
-        "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGc@._V1_SX300.jpg",
+        "https://m.media-amazon.com/images/M/MV5BMjM4MzY5NzYyMV5BMl5BanBnXkFtZTgwNTMzNTY2NjM@._V1_SX300.jpg",
     },
-    {
-      imdbID: "tt0109830",
-      Title: "Forrest Gump",
-      Year: "1994",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGc@._V1_SX300.jpg",
-    },
-    {
-      imdbID: "tt0816692",
-      Title: "Interstellar",
+      {
+      imdbID: "tt2911666",
+      Title: "John Wick",
       Year: "2014",
       Poster:
-        "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGc@._V1_SX300.jpg",
+        "https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTU2NDA4MjE@._V1_SX300.jpg",
     },
   ];
 };

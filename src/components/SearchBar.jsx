@@ -16,7 +16,6 @@ const SearchBar = ({ onSearch }) => {
       <input
         type="text"
         className="search-input"
-        placeholder="Search movie..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />

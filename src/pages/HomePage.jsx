@@ -9,14 +9,12 @@ const HomePage = () => {
   const [movies, setMovies] = useState([]);
   const [selectedMovies, setSelectedMovies] = useState([]);
 
-  // Загрузка фильмов при старте
   useEffect(() => {
     getRandomMovies().then((data) => {
       setMovies(data);
     });
   }, []);
 
-  // Поиск
   const handleSearch = (query) => {
     searchMovies(query).then((result) => {
       if (result.Search) {
@@ -27,12 +25,12 @@ const HomePage = () => {
     });
   };
 
-  // Добавление/удаление из избранного
-  const handleToggleMovie = (movie) => {
-    const isAlreadySelected = selectedMovies.some(
-      (m) => m.imdbID === movie.imdbID
-    );
-
+  // THIS FUNCTION ADDS/REMOVES MOVIES
+  const handleClickMovie = (movie) => {
+    console.log("Movie clicked:", movie.Title); // Check if this appears in console
+    
+    const isAlreadySelected = selectedMovies.some((m) => m.imdbID === movie.imdbID);
+    
     if (isAlreadySelected) {
       const filtered = selectedMovies.filter((m) => m.imdbID !== movie.imdbID);
       setSelectedMovies(filtered);
@@ -41,10 +39,8 @@ const HomePage = () => {
     }
   };
 
-  // Сохранение списка
   const handleSaveList = (listName) => {
     const movieIds = selectedMovies.map((m) => m.imdbID);
-
     return saveMovieList(listName, movieIds).then(() => {
       setSelectedMovies([]);
     });
@@ -58,15 +54,13 @@ const HomePage = () => {
           <MovieList
             movies={movies}
             selectedMovies={selectedMovies}
-            onToggle={handleToggleMovie}
+            onClick={handleClickMovie}  // ← MAKE SURE THIS IS onClick
           />
         </div>
         <div className="selected-section">
           <SelectedList
             selectedMovies={selectedMovies}
-            onRemove={(id) =>
-              setSelectedMovies(selectedMovies.filter((m) => m.imdbID !== id))
-            }
+            onRemove={(id) => setSelectedMovies(selectedMovies.filter(m => m.imdbID !== id))}
             onSaveList={handleSaveList}
           />
         </div>

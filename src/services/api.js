@@ -5,12 +5,12 @@ const OMDB_BASE_URL = "https://www.omdbapi.com/";
 const getDefaultMovies = () => {
   return [
     {
-      imdbID: "tt0120338", 
-      Title: "Titanic",
-      Year: "1997", 
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BMDdmZGU3NDQtY2E5My00ZTliLWIzOTUtMTY4ZGI1YjdiNjk3XkEyXkFqcGc@._V1_SX300.jpg",
-    },
+    imdbID: "tt2250912",
+    Title: "Spider-Man: Homecoming",
+    Year: "2017",
+    Poster:
+        "https://m.media-amazon.com/images/M/MV5BNTk4ODQ1MzgzNl5BMl5BanBnXkFtZTgwMTMyMzM4MTI@._V1_SX300.jpg",
+},
       {
       imdbID: "tt0468569",
       Title: "The Dark Knight",
@@ -19,12 +19,12 @@ const getDefaultMovies = () => {
         "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
     },
     {
-      imdbID: "tt0499549",
-      Title: "Avatar",
-      Year: "2009",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BZDA0OGQxNTItMDZkMC00N2UyLTg3MzMtYTJmNjg3ZjE0MzQ5XkEyXkFqcGc@._V1_SX300.jpg",
-    },
+     imdbID: "tt0371746",
+     Title: "Iron Man",
+     Year: "2008",
+     Poster: 
+     "https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_SX300.jpg",
+},
     {
       imdbID: "tt1375666",
       Title: "Inception",
@@ -33,11 +33,11 @@ const getDefaultMovies = () => {
         "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
     },
     {
-      imdbID: "tt0241527",
-      Title: "Harry Potter and the Sorcerer's Stone",
-      Year: "2001",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BNjQ3NWNlNmQtMTE5ZS00MDdmLTlkZjUtZTBlM2UxMGFiMTU3XkEyXkFqcGc@._V1_SX300.jpg",
+     imdbID: "tt1201607",
+     Title: "Harry Potter and the Deathly Hallows: Part 2",
+     Year: "2011",
+     Poster:
+   "https://m.media-amazon.com/images/M/MV5BMjIyZGU4YzUtNDkzYi00ZDRhLTljYzctYTMxMDQ4M2E0Y2YxXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg",
     },
     {
       imdbID: "tt2488496",
@@ -47,19 +47,32 @@ const getDefaultMovies = () => {
         "https://m.media-amazon.com/images/M/MV5BMTQ1MjQwMTE5OF5BMl5BanBnXkFtZTgwNjk3MTcyMDE@._V1_SX300.jpg",
     },
     {
-      imdbID: "tt4633694",
-      Title: "Spider-Man: Into the Spider-Verse",
-      Year: "2018",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BMjM4MzY5NzYyMV5BMl5BanBnXkFtZTgwNTMzNTY2NjM@._V1_SX300.jpg",
+       imdbID: "tt7286456",
+        Title: "Joker",
+        Year: "2019",
+        Poster:
+        "https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX300.jpg"
     },
-      {
-      imdbID: "tt2911666",
-      Title: "John Wick",
-      Year: "2014",
-      Poster:
-        "https://m.media-amazon.com/images/M/MV5BMTU2NjA1ODgzMF5BMl5BanBnXkFtZTgwMTU2NDA4MjE@._V1_SX300.jpg",
-    },
+   {
+    imdbID: "tt1392170",
+    Title: "The Hunger Games",
+    Year: "2012",
+     Poster: 
+     "https://m.media-amazon.com/images/M/MV5BMjA4NDg3NzYxMF5BMl5BanBnXkFtZTcwNTgyNzkyNw@@._V1_SX300.jpg",
+},
+    
+  {
+  imdbID: "tt0097757",
+  Title: "The Little Mermaid",
+  Year: "1989",
+  Poster: "https://m.media-amazon.com/images/M/MV5BYzJlOWEwYjQtMmRmYi00NTUwLTkwYzgtNWVhYjFmYzE0NzM4XkEyXkFqcGc@._V1_SX300.jpg",
+},
+{
+  imdbID: "tt1386697",
+  Title: "Suicide Squad",
+  Year: "2016",
+  Poster: "https://m.media-amazon.com/images/M/MV5BMjM1OTMxNzUyM15BMl5BanBnXkFtZTgwNjYzMTIzOTE@._V1_SX300.jpg",
+},
   ];
 };
 

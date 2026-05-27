@@ -2,7 +2,7 @@ import React from "react";
 import MovieCard from "./MovieCard";
 import "./MovieList.css";
 
-const MovieList = ({ movies, selectedMovies, onToggle }) => {
+const MovieList = ({ movies, selectedMovies, onClick }) => {
   if (movies.length === 0) {
     return <p className="no-results">No movies found. Try another search.</p>;
   }
@@ -10,15 +10,13 @@ const MovieList = ({ movies, selectedMovies, onToggle }) => {
   return (
     <div className="movie-list">
       {movies.map((movie) => {
-        const isAdded = selectedMovies.some(
-          (selected) => selected.imdbID === movie.imdbID
-        );
-
+        const isAdded = selectedMovies.some((selected) => selected.imdbID === movie.imdbID);
+        
         return (
           <MovieCard
             key={movie.imdbID}
             movie={movie}
-            onToggle={onToggle}
+            onClick={onClick}
             isAdded={isAdded}
           />
         );

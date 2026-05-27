@@ -42,7 +42,7 @@
   align-self: flex-start;
 }
 
-/* Зелёная кнопка когда фильм добавлен */
+/* Green color when added */
 .fav-button.added {
   background-color: #28a745;
 }

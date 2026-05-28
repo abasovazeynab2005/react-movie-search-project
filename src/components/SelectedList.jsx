@@ -6,54 +6,53 @@ const SelectedList = ({ selectedMovies, onRemove, onSaveList }) => {
   const [listName, setListName] = useState("");
   const navigate = useNavigate();
 
-  const canSave = listName.trim() && selectedMovies.length;
-  const canLook = selectedMovies.length > 0;
+  // Проверяем, можно ли сохранить (есть название и есть фильмы)
+  const canSave = listName.trim() !== "" && selectedMovies.length > 0;
 
   const handleSave = () => {
-    if (!canSave) return; // Просто ничего не делаем, без сообщения
+    if (!canSave) {
+      return; // 👈 Просто выходим, без сообщения
+    }
 
     onSaveList(listName).then(() => {
-      setListName(""); // Просто очищаем поле, без сообщения
+      setListName("");
     });
   };
 
   return (
     <div className="selected-card">
-      {/* УДАЛЁН saveMessage блок */}
+      {/* Сообщения полностью убраны */}
 
       <div className="added-movies-list">
-        {selectedMovies.length ? (
-          selectedMovies.map(({ imdbID, Title }) => (
-            <div key={imdbID} className="added-movie-item">
-              <span>{Title}</span>
-              <button onClick={() => onRemove(imdbID)}>✕</button>
-            </div>
-          ))
-        ) : (
-          <div className="empty-favorite" />
-        )}
+        {selectedMovies.map((movie) => (
+          <div key={movie.imdbID} className="added-movie-item">
+            <span>{movie.Title}</span>
+            <button
+              className="remove-x-btn"
+              onClick={() => onRemove(movie.imdbID)}
+            >
+              ✕
+            </button>
+          </div>
+        ))}
+        {selectedMovies.length === 0 && <div className="empty-favorite"> </div>}
       </div>
 
       <input
+        type="text"
         className="folder-input"
         value={listName}
         onChange={(e) => setListName(e.target.value)}
-        placeholder="Folder name..."
       />
 
       <button
-        className={`btn-add-list ${canSave ? "active" : ""}`}
+        className={canSave ? "btn-add-list active" : "btn-add-list"}
         onClick={handleSave}
-        disabled={!canSave}
       >
         Add To Favorite List
       </button>
 
-      <button
-        className={`btn-look-list ${canLook ? "active" : ""}`}
-        onClick={() => navigate("/my-lists")}
-        disabled={!canLook}
-      >
+      <button className="btn-look-list" onClick={() => navigate("/my-lists")}>
         Look At Favorite List
       </button>
     </div>

@@ -72,6 +72,7 @@
   cursor: pointer;
 }
 
+/* Зелёная кнопка когда есть название и фильмы */
 .btn-add-list.active {
   background-color: #28a745;
 }
@@ -92,18 +93,4 @@
 
 .btn-look-list:hover {
   background-color: #6a006a;
-}
-
-
-
-/* Активная кнопка Look */
-.btn-look-list.active {
-  background-color: #218838;
-    color: white;
-}
-
-/* Неактивная кнопка Look */
-.btn-look-list:disabled {
-  background: #999999;
-  color: #dddddd;
 }

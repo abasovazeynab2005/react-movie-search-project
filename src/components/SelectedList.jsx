@@ -4,31 +4,22 @@ import "./SelectedList.css";
 
 const SelectedList = ({ selectedMovies, onRemove, onSaveList }) => {
   const [listName, setListName] = useState("");
-  const [saveMessage, setSaveMessage] = useState("");
   const navigate = useNavigate();
 
   const canSave = listName.trim() && selectedMovies.length;
-
-  const showMessage = (text) => {
-    setSaveMessage(text);
-    setTimeout(() => setSaveMessage(""), 2000);
-  };
+  const canLook = selectedMovies.length > 0;
 
   const handleSave = () => {
-    if (!canSave)
-      return showMessage(
-        " Please enter the name or select the favorite film! "
-      );
+    if (!canSave) return; // Просто ничего не делаем, без сообщения
 
     onSaveList(listName).then(() => {
-      setListName("");
-      showMessage("List saved!");
+      setListName(""); // Просто очищаем поле, без сообщения
     });
   };
 
   return (
     <div className="selected-card">
-      {saveMessage && <div className="save-message">{saveMessage}</div>}
+      {/* УДАЛЁН saveMessage блок */}
 
       <div className="added-movies-list">
         {selectedMovies.length ? (
@@ -39,24 +30,30 @@ const SelectedList = ({ selectedMovies, onRemove, onSaveList }) => {
             </div>
           ))
         ) : (
-      <div className="empty-favorite">No movies selected yet</div>        
-      )}
+          <div className="empty-favorite" />
+        )}
       </div>
 
       <input
         className="folder-input"
         value={listName}
         onChange={(e) => setListName(e.target.value)}
+        placeholder="Folder name..."
       />
 
       <button
         className={`btn-add-list ${canSave ? "active" : ""}`}
         onClick={handleSave}
+        disabled={!canSave}
       >
         Add To Favorite List
       </button>
 
-      <button className="btn-look-list" onClick={() => navigate("/my-lists")}>
+      <button
+        className={`btn-look-list ${canLook ? "active" : ""}`}
+        onClick={() => navigate("/my-lists")}
+        disabled={!canLook}
+      >
         Look At Favorite List
       </button>
     </div>

@@ -39,8 +39,8 @@ const SelectedList = ({ selectedMovies, onRemove, onSaveList }) => {
             </div>
           ))
         ) : (
-          <div className="empty-favorite" />
-        )}
+      <div className="empty-favorite">No movies selected yet</div>        
+      )}
       </div>
 
       <input

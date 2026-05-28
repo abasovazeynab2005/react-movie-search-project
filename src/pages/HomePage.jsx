@@ -27,7 +27,7 @@ const HomePage = () => {
 
   // THIS FUNCTION ADDS/REMOVES MOVIES
   const handleClickMovie = (movie) => {
-    console.log("Movie clicked:", movie.Title); // Check if this appears in console
+    console.log("Movie clicked:", movie.Title); 
     
     const isAlreadySelected = selectedMovies.some((m) => m.imdbID === movie.imdbID);
     
@@ -54,7 +54,7 @@ const HomePage = () => {
           <MovieList
             movies={movies}
             selectedMovies={selectedMovies}
-            onClick={handleClickMovie}  // ← MAKE SURE THIS IS onClick
+            onClick={handleClickMovie}  
           />
         </div>
         <div className="selected-section">

@@ -10,8 +10,7 @@ const MovieList = ({ movies, selectedMovies, onClick }) => {
   return (
     <div className="movie-list">
       {movies.map((movie) => {
-        const isAdded = selectedMovies.some((selected) => selected.imdbID === movie.imdbID);
-        
+      const isAdded = !!selectedMovies.find((selected) => selected.imdbID === movie.imdbID);        
         return (
           <MovieCard
             key={movie.imdbID}

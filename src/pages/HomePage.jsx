@@ -26,18 +26,18 @@ const HomePage = () => {
   };
 
   // THIS FUNCTION ADDS/REMOVES MOVIES
-  const handleClickMovie = (movie) => {
-    console.log("Movie clicked:", movie.Title); 
-    
-    const isAlreadySelected = selectedMovies.some((m) => m.imdbID === movie.imdbID);
-    
-    if (isAlreadySelected) {
-      const filtered = selectedMovies.filter((m) => m.imdbID !== movie.imdbID);
-      setSelectedMovies(filtered);
-    } else {
-      setSelectedMovies([...selectedMovies, movie]);
-    }
-  };
+const handleClickMovie = (movie) => {
+  console.log("Movie clicked:", movie.Title);
+  
+  const foundMovie = selectedMovies.find((m) => m.imdbID === movie.imdbID);
+  
+  if (foundMovie) {
+    const filtered = selectedMovies.filter((m) => m.imdbID !== movie.imdbID);
+    setSelectedMovies(filtered);
+  } else {
+    setSelectedMovies([...selectedMovies, movie]);
+  }
+};
 
   const handleSaveList = (listName) => {
     const movieIds = selectedMovies.map((m) => m.imdbID);
